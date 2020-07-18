@@ -1,55 +1,48 @@
 <%- include('layout/header.ejs')%>
 <%- include('layout/navigation.ejs')%>
 <!--This is a test-->
-<ul>
-    <li>
-        <h3>St. Gerard Highschool</h3>
-        <ul>
-            <li>Graduated May 2005</li>
-        </ul>
-    </li>
-    <li>
-        <h3>St. Philliphs Community College</h3>
-        <ul>
-            <li>
-                Attended: 2004-2006
-            </li>
-            <li>
-                Degree: microcomputer applications.
-            </li>
-        </ul>
-    </li>
-    <li>
-        <h3>Community College of the Air Force</h3>
-        <ul>
-            <li>
-                Attended: 2006-2018
-            </li>
-            <li>
-                Degree: Applied Science in Aerospace Ground Equipment
-            </li>
-        </ul>
-    </li>
-    <li>
-        <h3>Trident University</h3>
-        <ul>
-            Attended: 2017
-        </ul>
-    </li>
-    <li>
-        <h3>Texas A&M University - San Antonio</h3>
-        <ul>
-            <li>
-            Attended: 2018-current
-            </li>
-            <li>
-                Degree: BAAS IT Information Assurance & Security
-            </li>
-            <li>
-                Minor: Computer Science
-            </li>
-        </ul>
-    </li>
-</ul>
+
+<table class="table table-dark table-striped-2 uhh-green white-text">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Education Institute</th>
+        <th scope="col">Year Attended</th>
+        <th scope="col">Major/Minor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><h3>St. Gerard Catholic Highschool</h3></td>
+        <td>2001-2005</td>
+        <td>Primary education</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td><h3>St. Philliphs Community College</h3></td>
+        <td>2004-2006</td>
+        <td>microcomputer applications</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td><h3>Community College of the Air Force</h3></td>
+        <td>2006-2018</td>
+        <td>BAAS Aerospace Ground Equipment</td>
+      </tr>
+      <tr>
+          <th scope="row">3</th>
+          <td><h3>Trident University International</h3></td>
+          <td>2017</td>
+          <td>none</td>
+      </tr>
+      <tr>
+          <th scope="row">4</th>
+          <td><h3>Texas A&M University - San Antonio</h3></td>
+          <td>2018-current</td>
+          <td>BAAS IT Information Assurance & Security <br> Computer Science</td>
+      </tr>
+    </tbody>
+  </table>
 
 <%- include('layout/footer.ejs')%>

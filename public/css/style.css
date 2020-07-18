@@ -1,0 +1,19 @@
+.uhh-green-text {
+    color: #89b73a !important
+}
+
+.uhh-green {
+    background: #89b73a !important
+}
+
+.uhh-green-2 {
+    background: #3ab768 !important
+}
+
+.table-striped-2 tbody tr:nth-of-type(odd) {
+    background-color: #3ab768;
+  }
+
+.deep-purple-2 {
+background: #b73a89;
+}

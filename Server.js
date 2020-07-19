@@ -14,4 +14,4 @@ app.use(express.static(path.join(__dirname,  '/public')));
 
 app.use('/', pagesRouter);
 
-app.listen(3000, () =>{ console.log(' Express server is running')});
+app.listen(3000, () =>{ console.log('Express server is running on port 3000')});

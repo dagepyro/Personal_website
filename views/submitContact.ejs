@@ -1,0 +1,27 @@
+<%- include('layout/header.ejs')%>
+<%- include('layout/navigation.ejs')%>
+<div class="container">
+<table class="table table-dark table-striped-2 uhh-green white-text">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col"><%= contact.name %> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Email</th>
+        <td><%= contact.email %></td>
+        </tr>
+      <tr>
+        <th scope="row">Subject</th>
+        <td> <%= contact.subject %> </td>
+      </tr>
+      <tr>
+        <th scope="row">Comments</th>
+        <td><%= contact.comments %></td>
+      </tr>
+
+    </tbody>
+  </table>
+<%- include('layout/footer.ejs')%>

@@ -19,5 +19,6 @@
   "homepage": "https://github.com/dagepyro/Personal_website#readme",
   "dependencies": {
     "save": "^2.4.0"
-  }
+  },
+  "devDependencies": {}
 }

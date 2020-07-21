@@ -1,0 +1,43 @@
+<%- include('layout/header.ejs')%>
+<%- include('layout/navigation.ejs')%>
+
+<div class="col-8 container">
+    <form action="/submitarticle" method="POST">
+        <div class="md-form">
+        <i class="fas fa-user prefix grey-text"></i>
+        <input type="text" id="form-name" class="form-control" name="title" required>
+        <label for="form-name"> Title </label>
+        </div>
+
+         <div class="md-form">
+            <i class="fas fa-pencil-alt prefix grey-text"></i>
+            <textarea id="form-text" class="form-control md-textarea" rows="7" name="content" required></textarea>
+         <label for="form-text">Write here</label>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-light-blue">Submit</button>
+         </div>
+    </form>
+</div>
+
+<table class="table table-dark table-striped-2 uhh-green white-text">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% for (let a of articles) { %>
+        <tr>
+            <th scope="row"> <%= a.title %> </th>
+            <th scope="row"> <%= a.date %> </th>
+            <th scope="row"> <%= a.content %> </th>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+</div>
+<%- include('layout/footer.ejs')%>

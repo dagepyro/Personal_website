@@ -20,7 +20,23 @@ router.get('/jobHistory', (req, res)=> {res.render('jobHistory');});
 router.get('/article', (req,res)=> {res.render('article');});
 
 router.post('/submitArticle', (req,res)=> {
+    const date = new Date();
+    const article = new Article ({
+        title: req.body.title,
+        date: date,
+        content: req.body.content,
+    });
+
+    article.save().then(result => {console.log('an article has been added')}
+    );
+    /*
+    .then(result => {
+        console.log('an article has been added')
+        res.render('submitArticle', {contact: result})
+    .catch(err => console.log(err));
+    })*/
     
+    /*
     const title = req.body.title;
     const date = new Date();
     const content = req.body.content;
@@ -31,11 +47,30 @@ router.post('/submitArticle', (req,res)=> {
     const articles = article.findAll();
 
     res.render('submitArticle', {articles: articles});
+    */
 });
 
 router.post("/submitContact", (req, res)=>{
+    /* use a schema modle */
+
+
+        const contact = new Contact ({
+            name: req.body.name,
+            email: req.body.email,
+            subject: req.body.subject,
+            comments: req.body.comments,
+        })
     
-    const name = req.body.name;
+        contact.save()
+        .then(result => {
+            res.render('submitContact', {Contact: result})
+        .catch(err => console.log(err));
+        })
+
+    /* end of schema modle */
+
+
+   /* const name = req.body.name;
     const email = req.body.email;
     const subject = req.body.subject;
     const comments = req.body.comments;
@@ -43,6 +78,10 @@ router.post("/submitContact", (req, res)=>{
     const contact = new Contact(name, email, subject, comments);
     contact.save();
 
-    res.render('submitContact',{contact: contact})});
+    res.render('submitContact',{contact: contact});
+    */
+
+});
+    
 
 module.exports = router;

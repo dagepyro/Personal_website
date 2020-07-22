@@ -1,3 +1,25 @@
+const mongoose = require('mongoose');
+
+var contactSchema = new mongoose.Schema({
+    name: {
+        type: String,
+    required: true,
+    },
+    email: {
+        type: String,
+    },
+    subject: {
+        type: String,
+    },
+
+    comments: {
+        type: String,
+    },
+})
+
+module.exports = mongoose.model('Contact', contactSchema);
+
+/*
 const contact = [];
 
 class Contact{
@@ -14,3 +36,4 @@ class Contact{
 }
 
 module.exports = Contact;
+*/

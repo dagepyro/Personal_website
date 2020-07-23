@@ -26,28 +26,15 @@ router.post('/submitArticle', (req,res)=> {
         date: date,
         content: req.body.content,
     });
+    Article.collection.insertOne(article)
+    .then(result => {console.log('Insert success..'); })
+    .catch (err => console.log(err));
 
-    article.save().then(result => {console.log('an article has been added')}
-    );
-    /*
-    .then(result => {
-        console.log('an article has been added')
-        res.render('submitArticle', {contact: result})
-    .catch(err => console.log(err));
-    })*/
-    
-    /*
-    const title = req.body.title;
-    const date = new Date();
-    const content = req.body.content;
-
-    const article = new Article(title, date, content);
-    article.save();
-
-    const articles = article.findAll();
-
-    res.render('submitArticle', {articles: articles});
-    */
+    Article.find()
+        .then(results => {
+            res.render('submitArticle', {articles: results});
+        })
+        .catch (err => {console.log(err)})
 });
 
 router.post("/submitContact", (req, res)=>{
@@ -68,18 +55,6 @@ router.post("/submitContact", (req, res)=>{
         })
 
     /* end of schema modle */
-
-
-   /* const name = req.body.name;
-    const email = req.body.email;
-    const subject = req.body.subject;
-    const comments = req.body.comments;
-
-    const contact = new Contact(name, email, subject, comments);
-    contact.save();
-
-    res.render('submitContact',{contact: contact});
-    */
 
 });
     

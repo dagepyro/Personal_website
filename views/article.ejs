@@ -2,21 +2,29 @@
 <%- include('layout/navigation.ejs')%>
 
 <div class="col-8 container">
-    <form action="/submitarticle" method="POST">
+    <form action="/viewAllArticels" method="POST">
         <div class="md-form">
         <i class="fas fa-user prefix white-text"></i>
-        <input type="text" id="form-name" class="form-control white-text" name="title" required>
-        <label for="form-name" class="white-text"> Title </label>
+        <input type="text" id="form-title" class="form-control white-text" name="title" >
+        <label for="form-title" class="white-text"> Title </label>
         </div>
+
+        <div class="md-form white-text">
+           <a href="https://www.google.com" class="prefix"> <i class=" fas fa-user prefix white-text"></i></a>
+            <input type="text" id="form-name" class="form-control white-text" name="name" >
+            <label for="form-name" class="white-text">Name</label>
+        </div>
+
 
          <div class="md-form">
             <i class="fas fa-pencil-alt prefix white-text"></i>
-            <textarea id="form-text" class="form-control md-textarea white-text" rows="7" name="content" required></textarea>
+            <textarea id="form-text" class="form-control md-textarea white-text" rows="7" name="content" ></textarea>
          <label for="form-text" class="white-text">Write here</label>
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-deep-purple">Submit</button>
+            <button class="btn btn-deep-purple" formaction="/submitArticle">Submit</button>
+            <button class="btn btn-deep-purple" formaction="/viewAllArticles">View All Articles</button>
          </div>
     </form>
 </div>

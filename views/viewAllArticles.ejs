@@ -1,0 +1,27 @@
+
+
+<%- include('article.ejs') %> 
+
+<div>
+<table class="table table-dark table-striped-2 uhh-green white-text">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% for (let a of articles) { %>
+        <tr>
+            <th scope="row"> <%= a.title %> </th>
+            <th scope="row"><%= a.name %> </th>
+            <th scope="row"> <%= a.date %> </th>
+            <th scope="row"> <%= a.content %> </th>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+</div>
+</div>

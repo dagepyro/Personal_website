@@ -4,11 +4,15 @@
 <table class="table table-dark table-striped-2 uhh-green white-text">
     <thead>
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col"><%= Contact.name %> </th>
+        <th scope="col">First Name</th>
+        <th scope="col"><%= Contact.firstName %> </th>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <th scope="row">Last Name</th>
+        <th scope="row"><%= Contact.lastName %> </th>
+      </tr>
       <tr>
         <th scope="row">Email</th>
         <td><%= Contact.email %></td>

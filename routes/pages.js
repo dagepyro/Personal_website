@@ -23,11 +23,12 @@ router.post('/submitArticle', (req,res)=> {
     const date = new Date();
     const article = new Article ({
         title: req.body.title,
+        name: req.body.name,
         date: date,
         content: req.body.content,
     });
     Article.collection.insertOne(article)
-    .then(result => {console.log('Insert success..'); })
+    .then(result => {console.log(req.body.title + ' Was insterted by '+ req.body.name); })
     .catch (err => console.log(err));
 
     Article.find()
@@ -42,7 +43,8 @@ router.post("/submitContact", (req, res)=>{
 
 
         const contact = new Contact ({
-            name: req.body.name,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             email: req.body.email,
             subject: req.body.subject,
             comments: req.body.comments,
@@ -56,6 +58,13 @@ router.post("/submitContact", (req, res)=>{
 
     /* end of schema modle */
 
+});
+
+router.post("/viewAllArticles", (req, res)=> {
+    Article.find()
+    .then(result =>{
+        res.render('viewAllArticles', {articles: result});
+    }).catch (err => {console.log(err)})
 });
     
 

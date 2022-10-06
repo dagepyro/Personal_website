@@ -19,7 +19,7 @@
   "homepage": "https://github.com/dagepyro/Personal_website#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^3.1.3",
+    "ejs": "^3.1.7",
     "express": "^4.17.1",
     "mongoose": "^5.9.25",
     "nodemailer": "^6.4.10",

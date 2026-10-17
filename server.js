@@ -6,8 +6,22 @@ const pagesRouter = require('./routes/pages.js');
 const mongoose = require('mongoose');
 const mongooseA = require('mongoose');
 
-
 const app = express();
+
+//creating https options
+const CERT_DIR = path.join(__dirname, 'certs');
+const options = {
+    key: fs.readFileSync(path.join(CERT_DIR, 'dev-server-key.pem')),
+    cert: fs.readFileSync(path.join(CERT_DIR, 'dev-server-cert.pem'))
+}
+
+// create server hello
+const server = https.createServer(options, (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World');
+});
+// end of create server hello
 
 app.set('view engine', 'ejs');
 

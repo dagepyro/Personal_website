@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,  '/public')));
 
 app.use('/', pagesRouter);
-//
+
 //mongoose.connect('mongodb://localhost:27017/ContactDB', { useNewUrlParser:true, useUnifiedTopology:true})
 //.then(()=> {
 //    app.listen(3000, () =>{ console.log('mongodb connections sucess.... And Express server is running');

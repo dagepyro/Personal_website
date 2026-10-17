@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const pagesRouter = require('./routes/pages.js');
 const mongoose = require('mongoose');
 const app = express();
+const https = require ('node:https');
+const fs = require('node:fs');
 
 //creating https options
 const CERT_DIR = path.join(__dirname, 'certs');
@@ -14,6 +16,7 @@ const options = {
 
 // create server hello
 const server = https.createServer(options, (req, res) => {
+    consle.log(req);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World');
@@ -33,5 +36,8 @@ app.use('/', pagesRouter);
 //});
 //})
 
- app.listen(3000, () =>{ console.log('Express server is running on port 3000')});
+// app.listen(3000, () =>{ console.log('Express server is running on port 3000')});
 
+https.createServer(options, app).listen(3000, () => {
+    console.log('Express server is running on port 3000');
+});

@@ -2,10 +2,7 @@ const express = require( 'express' );
 const path = require('path');
 const bodyParser = require('body-parser');
 const pagesRouter = require('./routes/pages.js');
-
 const mongoose = require('mongoose');
-const mongooseA = require('mongoose');
-
 const app = express();
 
 //creating https options
